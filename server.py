@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render_template('hello.html')
+    return render_template('hello.jinja', domain=os.environ['DOMAIN'])
 
 app.debug = True
 app.run(host='0.0.0.0', port=int(os.environ['PORT']))
